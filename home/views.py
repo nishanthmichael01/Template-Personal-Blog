@@ -11,7 +11,7 @@ from django.contrib import messages
 def blogs(request):
     posts = BlogPost.objects.all()
     posts = BlogPost.objects.filter().order_by('-dateTime')
-    return render(request, "blog.html", {'posts':posts})
+    return render(request, "index.html", {'posts':posts})
 
 def blogs_comments(request, slug):
     post = BlogPost.objects.filter(slug=slug).first()
